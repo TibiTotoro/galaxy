@@ -3,35 +3,14 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 @import "./helpers.scss";
-@import "../components/Button/Button.scss";
-@include fontface(Inter, Inter-Regular);
-@include fontface(Inter, Inter-Medium, 500);
-//@include fontface(Inter, GraphikLC-Light, 300);
-@include fontface(Inter, Inter-SemiBold, 600);
 
 
 html {
-    background: #fff;
     font-family: $font_main;
-    margin: 0;
-   
+    margin: 0;   
     padding: 0;
-    -webkit-font-smoothing: antialiased;
     font-size: 16px;
-    line-height: 1.33;
-
-    &.mobile-overflow {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-     
-        height: 100vh;
-    }
-
-    @include mq($sm_bp) {
-        line-height: 1.4;
-    }
+    line-height: 1.4;
 
     @include mq($sm_bp) {
         font-size: 20px;
@@ -40,23 +19,11 @@ html {
 }
 
 body {
-    min-width: 300px;
+    min-width: 320px;
     position: relative;
-    overflow-x: hidden;
-    color: $color_blue;
+    overflow-x: hidden;   
     margin: 0;
     padding: 0;
-
-    &.mobile-overflow {
-        position: fixed;
-        top: 0;
-        overflow-y: scroll;
-        left: 0;
-        width: 100%;
-      //  min-height:600px;
-        height: 100vh;
-        overflow-y: scroll;
-    }
 
     &.is-grid::after {
         content: '';
@@ -82,17 +49,11 @@ div {
 }
 
 .wrapper {
-    max-width: 1330px;
-    @include wrapper-indent();
-}
-
-.wrapperSmall {
-    max-width:1160px;
+    max-width: $wrapperWidth;
     @include wrapper-indent();
 }
 
 a {
-    color: $color_blue_2;
     text-decoration: none;
 }
 
@@ -132,136 +93,31 @@ button {
 
 h1,
 .h1 {
-    font-weight: 500;
-    line-height: 1.15;
-    color: $color_title;
-    font-size: 1.7rem;
 
-    @include mq($sm_bp) {
-        font-size: 2rem;
-    }
 }
 
 h2,
 .h2 {
-    text-align: center;
-    color: $color_title;
-    font-weight: 500;
-    font-size: 1.5rem;
-    line-height: 1.17;
-    margin-bottom: $h2_bmm;
-
-    @include mq($md_bp) {
-        font-size: 1.8rem;
-        line-height: 1.11;
-        margin-bottom:2.5rem;
-    }
+    
 }
 
 h3,
 .h3 {
-    color: $color_title;
-      font-weight: 500;
-    font-size: 1.25rem;
-    line-height: 1.2;
-    text-align: center;
-    margin-bottom: 1.25rem;
-
-    @include mq($sm_bp) {
-        text-align: left;
-    }
-
-    @include mq($md_bp) {
-        margin-bottom: 1.1rem;
-        font-size: 1.5rem;
-        line-height: 1.29;
-    }
+    
 }
 
 
 h4, .h4 {
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 0.5rem;
+    
 }
 
 p,
 li,
 td {
-    font-size: 0.875rem;
     
-    font-weight: 400;
-    line-height: 1.33;
-    letter-spacing: -0.1px;
-    color: $color_blue;
-    margin-bottom: 5px;
-
-    @include mq($sm_bp) {
-        line-height: 1.5;
-        font-size: 0.8rem;
-    }
-}
-
-
-.above-subtitle {
-    margin-bottom: 5px;
-    line-height: 1.25;
-
-    @include mq($sm_bp) {
-        margin-bottom: 0;
-    }
-}
-
-.subtitle {
-    color: $color-title;
-    line-height: 1.21;
-    font-weight: 400;
-    font-size: 1.06666rem;
-    margin-bottom: $h2_bmm;
-
-    @include mq($sm_bp) {
-        font-size: 1rem;
-        margin-bottom: 2.5rem;
-    }
-
-    br {
-        display: none;
-
-        @include mq($xs_bp) {
-            display: inline-block;
-        }
-    }
-
 }
 
 .section {
     @include block_padding();
 }
-.loader {
-    width:100vw;
-    height:100vh;
-    background:#fff;
-    z-index:100;
-    position: fixed;
-    top:0;
-    left:0;
-}
-.partners-loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
 
-    &.hide {
-        display: none;
-    }
-}
-
-#partners-iframe {
-    display: block;
-    
-    &.hide {
-        display: none;
-    }
-}

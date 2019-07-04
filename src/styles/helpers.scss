@@ -9,55 +9,6 @@
     @include clearfix;
 }
 
-// Margins
-
-.h-m0 {
-    margin: 0 !important;
-}
-
-.h-mt0 {
-    margin-top: 0 !important;
-}
-
-.h-mb0 {
-    margin-bottom: 0 !important;
-}
-
-.h-m10 {
-    margin: 10px 0;
-}
-
-.h-mt10 {
-    margin-top: 10px;
-}
-
-.h-mb10 {
-    margin-bottom: 10px;
-}
-
-.h-m20 {
-    margin: 20px 0;
-}
-
-.h-mt20 {
-    margin-top: 20px;
-}
-
-.h-mb20 {
-    margin-bottom: 20px;
-}
-
-.h-m30 {
-    margin: 30px 0;
-}
-
-.h-mt30 {
-    margin-top: 30px;
-}
-
-.h-mb30 {
-    margin-bottom: 30px;
-}
 
 
 // Hidden
@@ -236,10 +187,6 @@
     }
 }
 
-.h-dark-strong {
-    color: $color_blue;
-    font-weight: 400;
-}
 
 .h-nowrap {
     white-space: nowrap;
