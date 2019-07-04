@@ -1,0 +1,381 @@
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table !important;
+        clear: both;
+        height: 0 !important;
+        visibility: hidden;
+    }
+}
+
+//МЕДИАЗАПРОСЫ
+@mixin mqMin($from, $to: false) {
+    @if $to {
+        @media (min-width: $from + 0px) and (max-width: $to + 0px) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: $from + 0px) {
+            @content;
+        }
+    }
+}
+
+
+@mixin mqOld($from, $to: false) {
+    @if $to {
+        @media (min-width: $from + 0px) and (max-width: $to + 0px) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (max-width: $from + 0px) {
+            @content;
+        }
+    }
+}
+
+
+@mixin mq($from, $to: false) {
+    @if $to {
+        @media (min-width: $from + 0px) and (max-width: $to + 0px) {
+            @content;
+        }
+    }
+
+    @else {
+        @media (min-width: $from + 0px) {
+            @content;
+        }
+    }
+}
+
+
+@function fontSize($fs, $vw: 1920) {
+    @return #{$fs / $vw * 100}vw;
+}
+
+// ШРИФТЫ
+// @include fontface(Roboto, roboto-bold, 700)
+@mixin fontface($family, $filename: $family, $weight: normal, $style: normal, $display: swap) {
+    @font-face {
+        font-family: $family;
+        //@at-rootsrc: url('./#{$filename}.woff2') format('woff2'),
+        src: url('./#{$filename}.woff') format('woff');
+        font-weight: $weight;
+        font-style: $style;
+        font-display: $display;
+    }
+}
+
+// WRAPPER
+@mixin wrapper-indent {
+    margin: 0 auto;
+    padding: 0 $wrapper_p_xs;
+
+    @include mq($sm_bp) {
+        padding: 0 $wrapper_p_sm;
+    }
+
+    @include mq($md_bp) {
+        padding: 0 $wrapper_p;
+    }
+}
+
+//сетка флексами - строка, колонка, размер колонки в формате (width row-flex)*$n/12
+@mixin row-flex($margin: false) {
+    display: flex;
+    flex-wrap: wrap;
+
+    @if $margin {
+        margin-left: ($margin * -1);
+        margin-right: ($margin * -1);
+    }
+
+    @else {
+        margin-left: ($offset_one_side_mobile * -1);
+        margin-right: ($offset_one_side_mobile * -1);
+
+        @include mq($sm_bp) {
+            margin-left: ($offset_one_side * -1);
+            margin-right: ($offset_one_side * -1);        }
+       
+    }
+}
+
+@mixin col($margin: false) {
+    box-sizing: border-box;
+
+    @if $margin {
+        margin-left: $margin;
+        margin-right: $margin;
+    }
+
+    @else {
+        margin-left: $offset_one_side_mobile;
+            margin-right: $offset_one_side_mobile;
+                @include mq($sm_bp) {
+            margin-left: $offset_one_side;
+            margin-right: $offset_one_side;
+                }
+    }
+
+}
+
+@mixin size($n, $margin: false) {
+    $value: $atom * $n; // width: ~"calc(@{value} - @{offset})";
+
+    @if $margin {
+        width: calc(#{$value} - #{$margin * 2});
+    }
+
+    @else {
+        width: calc(#{$value} - #{$offset_mobile});
+        @include mq($sm_bp) {
+             width: calc(#{$value} - #{$offset});
+        }
+    }
+}
+
+// ОТСТУПЫ БЛОКОВ
+//
+@mixin block-padding {
+    padding-bottom: $block_bp_sm;
+
+    @include mq($sm_bp) {
+        padding-bottom: $block_bp;
+    }
+}
+
+
+//Первая секция после верхней картинки 
+@mixin TopImg_margin {
+    margin-bottom: 3rem;
+
+    @include mq($sm_bp) {
+        margin-bottom: 4.5rem;
+    }
+}
+
+//АНИМАЦИЯ
+@mixin transition($name) {
+    transition: $name 0.5s ease-out;
+}
+
+//ПЕРВЫЙ БЛОК С КАРТИНКОЙ
+//фоновый градиент 
+@mixin fs-gradient {
+    background: linear-gradient(270deg, #0d53a5 0%, #2933a5 53%, #0f3c86 100%);
+
+    @include mq($xs_bp) {
+        background-image: linear-gradient(to top,   #FBFBFB,  #FBFBFB 100%);
+    }
+
+}
+
+@mixin fs-wrap {
+    overflow: hidden;
+}
+
+@mixin fs-img-wrap {
+    display: none;
+
+    @include mq($xs_bp) {
+        display: block;
+        flex-grow: 1;
+    }
+}
+
+@mixin fs-title-font {
+    color: $color_white;
+    font-size: 8.115vw;
+    font-weight: 500;
+    line-height: 1.38;
+
+    @include mq($xs_bp) {
+        color: $color_dark_text;
+        font-weight: 600;
+        line-height: 1.14;
+        font-size: 1.6rem;
+    }
+
+    @include mq($sm_bp) {
+        font-size: 2rem;
+    }
+}
+
+@mixin fs-item-font {
+    font-size: 4.6875vw;
+    font-weight: 500;
+    color: $color_white;
+
+    @include mq(400) {
+        font-weight: 400;
+    }
+
+    @include mq($xs_bp) {
+        font-size: 0.9rem;
+        color: $color_blue;
+        line-height:1.2;
+    }
+}
+
+@mixin fs-item-point {
+    padding-left: 20px;
+    position: relative;
+    @include mq($lg_bp) {
+        padding-left: 20px;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2.2vw;
+        left: 0;
+        flex: 0 0 1.8vw;
+        width: 1.5vw;
+        height: 1.5vw;
+        margin: 0 20px 0 0;
+        border-radius: 50%;
+        background-color: $color_white;
+        box-sizing: border-box;
+
+        @include mq($xs_bp) {
+            background-color: $color_blue_2;
+            top: 6px;
+            width: 6px;
+            height: 6px;
+        }
+
+        @include mq($lg_bp) {
+            top: 8px;
+        }
+    }
+}
+
+//ЭЛЕМЕНТЫ СТРАНИЦ
+
+/* ******* Списки с точками ***********/
+@mixin list_item {
+    position: relative;
+    padding-left: 20px;
+
+    @include mq($sm_bp) {
+        padding-left: 30px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        border-radius: 50%;
+        background: $color_blue_2;
+        top: 10px;
+        width: 3px;
+        height: 3px;
+
+        @include mq($sm_bp) {
+            width: 6px;
+            height: 6px;
+            top: 8px;
+        }
+    }
+}
+
+@mixin list_item_margin {
+    margin: 0 0 15px;
+
+    @include mq($xs_bp) {
+        margin: 0 0 20px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+//список с синими точками
+@mixin point-list {
+    padding-left: 30px;
+
+    li {
+        @include list_item();
+    }
+}
+
+/*блок с тенью*/
+@mixin mboxshadow($depth:1) {
+    @if $depth==1 {
+        box-shadow: 0 1px 3px rgba(97, 139, 241, 0.12), 0 1px 2px rgba(21, 46, 81, 0.24);
+    }
+
+    @else if $depth==2 {
+        box-shadow: 0 3px 6px rgba(97, 139, 241, 0.16), 0 3px 6px rgba(21, 46, 81, 0.23);
+    }
+
+    @else if $depth==3 {
+        box-shadow: 0 10px 20px rgba(97, 139, 241, 0.19), 0 6px 6px rgba(21, 46, 81, 0.23);
+    }
+
+    @else if $depth==4 {
+        box-shadow: 0 14px 28px rgba(97, 139, 241, 0.25), 0 10px 10px rgba(21, 46, 81, 0.22);
+    }
+
+    @else if $depth==5 {
+        box-shadow: 0 19px 38px rgba(97, 139, 241, 0.30), 0 15px 12px rgba(21, 46, 81, 0.22);
+    }
+
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(.25, .8, .25, 1);
+}
+
+/*HELPERS*/
+/*миксин сетки для определения центра элемента*/
+@mixin h-center {
+    border: 1px solid DeepSkyBlue;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-bottom: 1px solid LimeGreen;
+        width: 100%;
+        left: 0;
+        top: 50%;
+        z-index: 100;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-left: 1px solid LimeGreen;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        z-index: 100;
+    }
+}
+
+/*фон ретина*/
+$retina: "only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)";
+
+@mixin background-size($width, $height) {
+    background-size: $width $height;
+}
+@mixin retina_bg($file, $type, $width, $height) {
+    background-image: url($file + '.' + $type);
+    @include background-size($width, $height);
+    background-repeat: no-repeat;
+
+    @media #{$retina} {
+        background-image: url($file + '@2x.' + $type);
+        @include background-size($width, $height);
+        background-repeat: no-repeat;
+    }
+}
