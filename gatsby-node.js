@@ -9,7 +9,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        "~c": path.resolve(__dirname, "src/components")
+        "~c": path.resolve(__dirname, "src/components"),
+        "~s": path.resolve(__dirname, "src/stores")
       }
     }
   });

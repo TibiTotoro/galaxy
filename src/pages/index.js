@@ -14,7 +14,7 @@ const IndexPage = () => (
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
-    <a href='#' className='btn'>Я кнопка тыц</a>
+    <a href='#' className='Button'>Я кнопка тыц</a>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <p>Welcome to your new Gatsby site.</p>

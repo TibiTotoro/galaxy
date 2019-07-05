@@ -1,4 +1,4 @@
-.btn {
+.Button {
     position: relative;  
     display: inline-block;
     padding: 10px 20px;
@@ -36,13 +36,9 @@
 
     &:active:after {
       width: 120%;
-      padding-top: 120%;
-      
+      padding-top: 120%;      
       transition: width .2s ease-out, padding-top .2s ease-out;
-    }
-    
-    
-
-  }
+    } 
+}
   
     
