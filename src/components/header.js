@@ -6,7 +6,7 @@ import Test from "./Test"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `transparent`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <Test/>
+      <Test />
     </div>
   </header>
 )
@@ -42,3 +42,13 @@ Header.defaultProps = {
 }
 
 export default Header
+
+let menu = () => {
+  return [
+    { 
+      title: "Главная",
+      link: '/', 
+       
+    }
+  ]
+}

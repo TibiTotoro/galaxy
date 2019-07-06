@@ -6,11 +6,17 @@
     background: transparent;
     border:2px solid $color_add;
     color: $color_main;    
-    transition: background-color .3s;
+    background-image: radial-gradient(rgba(0,0,0,0) 0%,  rgba($color_add,.01) 50%, rgba($color_add,0.9) 100%);
+   
+   
+    background-position: 50% 50%;
+    background-size: 0% 0%;
+    color: white;   
+    transition:all 0.5s cubic-bezier(.97, .16, 1, .01);      
 
     &:hover, &:focus {
-      background-color: rgba($color_add,.05);
-    }
+      background-size:170% 170%;
+     }
 
     &:after {
       content: "";
