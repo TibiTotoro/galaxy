@@ -2,8 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Test from "./Test"
+import HeaderNav from "~l/headerNav/headerNav"
 
-const Header = ({ siteTitle }) => (
+const Header = ({siteTitle}) => {
+    return (
   <header
     style={{
       background: `transparent`,
@@ -29,9 +31,12 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <Test />
+      <HeaderNav/>
     </div>
-  </header>
-)
+  </header>)
+  
+  
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -43,12 +48,4 @@ Header.defaultProps = {
 
 export default Header
 
-let menu = () => {
-  return [
-    { 
-      title: "Главная",
-      link: '/', 
-       
-    }
-  ]
-}
+
