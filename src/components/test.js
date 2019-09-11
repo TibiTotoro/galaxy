@@ -1,6 +1,6 @@
 import React from 'react';
 
-import topNav from '~s/topNav.js';
+import topNav from '~store/topNav.js';
 import {observer} from 'mobx-react';
 
 

@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Test from "./Test"
+import Test from "~c/Test"
 import HeaderNav from "~l/headerNav/headerNav"
 
 const Header = ({siteTitle}) => {
