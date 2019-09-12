@@ -3,25 +3,24 @@ import PropTypes from "prop-types"
 import React from "react"
 
 import Nav from "~c/Nav/Nav"
-import './HeaderNav.scss'
+import Swipe from "react-easy-swipe"
+import styles from "./HeaderNav.module.scss"
+
 class HeaderNav extends React.Component {
   state = {
     showMenu: false,
   }
 
   click = () => {
+    console.log("test")
     if (document.body.clientWidth < 900) {
-    this.setState(prevState => ({
-      showMenu: !prevState.showMenu
-    }))
-  }
-    else {
-      this.setState(
-        {
-          showMenu: true
-        }
-      )
-
+      this.setState(prevState => ({
+        showMenu: !prevState.showMenu,
+      }))
+    } else {
+      this.setState({
+        showMenu: true,
+      })
     }
   }
   render() {
@@ -40,11 +39,30 @@ class HeaderNav extends React.Component {
       },
     ]
     return (
-      <div className = "HeaderNav">
-         <Nav items={menu} className = {this.state.showMenu ? "HeaderNav__nav active" : "HeaderNav__nav"}/>
-         <button className = {"Btn"} onClick = {this.click}>{this.state.showMenu.toString()}</button>
-      </div>
-      )
+      <>
+        <div
+          className={
+            this.state.showMenu
+              ? `${styles.active} ${styles.wrapper}`
+              : `${styles.wrapper}`
+          }
+        >
+          <Swipe onSwipeLeft={this.click}>
+            <div>
+              <Nav items={menu} st={styles} className = 'test'/>
+            </div>
+          </Swipe>
+        </div>
+        <button className={styles.btn} onClick={this.click}>
+          {this.state.showMenu.toString()}
+        </button>
+        <div  className={
+            this.state.showMenu
+              ? `${styles.overlay_active} ${styles.overlay}`
+              : `${styles.overlay}`
+          } onClick={this.click}></div>
+      </>
+    )
   }
 }
 export default HeaderNav

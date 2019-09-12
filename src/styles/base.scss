@@ -14,11 +14,12 @@
   
 
 ::-webkit-scrollbar-thumb {
-      background: linear-gradient(to bottom,$color_add, darken($color_add,10%));
+      background: linear-gradient(to bottom,#2b2b2b, darken(#2b2b2b,10%));
       height:5px;
       width:5px;
       box-shadow: inset 2px 2px 2px rgba(255,255,255,.25), inset -2px -2px 2px rgba(0,0,0,.25);
       border-radius: 4px;
+      border:1px solid #2b2b2b;
   }
 
 html {

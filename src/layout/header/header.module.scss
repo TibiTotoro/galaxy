@@ -1,0 +1,21 @@
+@import "~s/variables.scss";
+@import "~s/mixins.scss";
+.header {
+  padding: 10px 0;
+  position: absolute;
+  width: 100%;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #4f4f4f;
+}
+.wrapper {
+  @include mq($xs_bp) {
+    display: flex;
+  }
+}
+.logo {
+  width: 30px;
+  padding-right: 20px;
+}
