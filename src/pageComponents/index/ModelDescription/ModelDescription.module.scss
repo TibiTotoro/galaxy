@@ -1,0 +1,18 @@
+@import '~s/variables.scss'; 
+
+.section {
+	min-height:calc(100vh - 120px);
+    background: url('/images/ModelDescription.svg') no-repeat, linear-gradient( $color_bg_lines, transparent 1px) repeat , linear-gradient( 90deg, $color_bg_lines, transparent 1px) repeat;
+    background-size: contain, 150px 150px, 150px 150px;
+    background-position:-350px 0, 0 0;
+	padding:100px 0;
+	text-align:center;
+}
+.title {
+	color:#fff;
+	margin-bottom:1.5em;
+}
+.item {
+	color:#fff;
+	margin-bottom:1.5em;
+}  
