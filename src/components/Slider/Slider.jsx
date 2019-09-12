@@ -9,7 +9,7 @@ class Slider extends React.Component {
 		super(props);
 	}
     state = {
-        activeNum: 0
+		activeNum: 0,
     }
 
 	componentDidMount() {
@@ -17,8 +17,8 @@ class Slider extends React.Component {
 	}
 
     autoplay = () => setInterval(() => {
-        this.next();
-    }, 10000);
+		this.next();
+	}, 100000);
 
     next = () => {
 		this.setState((prevState) => {
@@ -29,10 +29,19 @@ class Slider extends React.Component {
 	}
 
     render(){
-
+       
         const items = content.map((item, i) => {
-			
-            return(<div className = {i === this.state.activeNum ? styles.item : `${styles.item} ${styles.itemActive} ` }>{item}</div>)
+			let cn = styles.img_ + i
+					
+			return(
+			<div className = {i === this.state.activeNum ? `${styles.item} ${styles.itemActive} ` :  styles.item }>
+				<div className={styles.img}  ></div>
+				<div className={styles.content}>
+				<div class="container">
+					{item}
+				</div>
+				</div>
+			</div>)
         })
         return(
             <div className={styles.slider}>
@@ -45,60 +54,36 @@ class Slider extends React.Component {
 export default Slider
 
 
-const slideOne = () =>(
-<>
-<div className={styles.item}>
-<div className={`${styles.img} ${styles.img_1}`} ></div>
-<div className={styles.content}>
-	<div class="container">
-		<p class="slider__number">01</p>
+const slideOne = () =>(<>
 		<h1>Солнечная система 3d онлайн</h1>
 		<p class="slider__text">3d модель солнечной системы позволяет представить движение планет и других объектов в солнечной системе.</p>
 		<a class="btn" href="/solnechnaya-sistema-3d.html">Посмотреть</a><br/>
 
-	</div>
-	<div class="slider__footer">
+		<div class="slider__footer">
 
-			<a class="model-desc-link model-desc-link_txt" href="#model-description">Описание модели</a>
-			<a class="model-desc-link arrow bounce" href="#model-description"></a>
-		</div>
-</div>    
-</div></>)
+<a class="model-desc-link model-desc-link_txt" href="#model-description">Описание модели</a>
+<a class="model-desc-link arrow bounce" href="#model-description"></a>
+</div>
+</>)
 	 
-const slideTwo = () =>(	<div class="slider-list__item  slider-list__item_1 showed-first">
-<div class="slider__img slider-list__item_decrease slider__img_1"></div>
-<div class="slider__content">
-	<div class="container">
-		<p class="slider__number">01</p>
-		<h1>Солнечная система 3d онлайн</h1>
-		<p class="slider__text">3d модель солнечной системы позволяет представить движение планет и других объектов в солнечной системе.</p>
-		<a class="btn" href="/solnechnaya-sistema-3d.html">Посмотреть</a><br/>
+const slideTwo = () =>(
+	<>
 
-	</div>
-	<div class="slider__footer">
+		<p class="slider__number">02</p>
+		<p class="h1">Планеты и спутники</p> 
+		<p class="slider__text">Фотографии, простые и увлекательные описания, понятные и взрослым и детям. Интересные факты о планетах солнечной системы. </p> 
+		<a class="btn" href="/solnechnaya-sistema-3d.html">Посмотреть</a>
+	   
+</>)
+const slideThree = () =>(		<>
 
-			<a class="model-desc-link model-desc-link_txt" href="#model-description">Описание модели</a>
-			<a class="model-desc-link arrow bounce" href="#model-description"></a>
-		</div>
-</div>    
-</div> )
-const slideThree = () =>(	<div class="slider-list__item  slider-list__item_1 showed-first">
-<div class="slider__img slider-list__item_decrease slider__img_1"></div>
-<div class="slider__content">
-	<div class="container">
-		<p class="slider__number">01</p>
-		<h1>Солнечная система 3d онлайн</h1>
-		<p class="slider__text">3d модель солнечной системы позволяет представить движение планет и других объектов в солнечной системе.</p>
-		<a class="btn" href="/solnechnaya-sistema-3d.html">Посмотреть</a><br/>
-
-	</div>
-	<div class="slider__footer">
-
-			<a class="model-desc-link model-desc-link_txt" href="#model-description">Описание модели</a>
-			<a class="model-desc-link arrow bounce" href="#model-description"></a>
-		</div>
-</div>    
-</div> )
+		<p class="slider__number">03</p>
+		<p class="h1">Карликовые планеты и астероиды</p>
+		<p class="slider__text">Я не знаю, что здесь можно написать. В общем, в этом разделе сайта есть всякая информация и про солнце, и про карликовые планеты, и про пояса астероидов.  </p> 
+		<a class="btn" href="/solnechnaya-sistema-3d.html">Посмотреть</a> 
+	  
+</> 
+)
 
 const content = [slideOne(), slideTwo(), slideThree()]
 
@@ -109,29 +94,8 @@ const content = [slideOne(), slideTwo(), slideThree()]
 			<div class="slider">
 				<div class="slider-list">
 				
-					<div class="slider-list__item slider-list__item_2">
-						<div class="slider__img slider-list__item_increase slider__img_2"></div>
-						<div class="slider__content">
-							<div class="container">
-								<p class="slider__number">02</p>
-								<p class="h1">Планеты и спутники</p> 
-								<p class="slider__text">Фотографии, простые и увлекательные описания, понятные и взрослым и детям. Интересные факты о планетах солнечной системы. </p> 
-								<a class="btn" href="/solnechnaya-sistema-3d.html">Посмотреть</a>
-							</div>
-						</div>    
-					</div> 
-					<div class="slider-list__item slider-list__item_3">
-						<div class="slider__img slider-list__item_decrease slider__img_3"></div>
-						<div class="slider__content">
-							<div class="container">
-								<p class="slider__number">03</p>
-								<p class="h1">Карликовые планеты и астероиды</p>
-								<p class="slider__text">Я не знаю, что здесь можно написать. В общем, в этом разделе сайта есть всякая информация и про солнце, и про карликовые планеты, и про пояса астероидов.  </p> 
-								<a class="btn" href="/solnechnaya-sistema-3d.html">Посмотреть</a> 
-							</div>
-						</div>    
-					</div> 
-				</div>
+					
+				
 				<div class="slider-buttons">
 					<span class="slider-buttons__prev"></span>
 					<span class="slider-buttons__next"></span>
