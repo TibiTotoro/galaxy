@@ -8,6 +8,7 @@ const Header = ({siteTitle}) => {
     return (
   <header
     style={{
+      position:'absolute',
       background: `transparent`,
       marginBottom: `1.45rem`,
     }}
