@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "solar_system",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Project galaxy3d.ru",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "TibiTotoro",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.0",
     "@babel/plugin-proposal-decorators": "^7.4.4",
@@ -16,7 +16,9 @@
     "gatsby-plugin-sharp": "^2.2.2",
     "gatsby-plugin-svg-sprite": "^2.0.1",
     "gatsby-source-filesystem": "^2.1.2",
+    "gatsby-source-wordpress": "^3.1.31",
     "gatsby-transformer-sharp": "^2.2.1",
+    "html-react-parser": "^0.9.1",
     "mobx": "^5.11.0",
     "mobx-react": "^6.1.1",
     "node-sass": "^4.12.0",
@@ -25,7 +27,9 @@
     "react-dom": "^16.8.6",
     "react-easy-swipe": "0.0.18",
     "react-helmet": "^5.2.1",
-    "sass-loader": "^7.1.0"
+    "react-scroll": "^1.7.14",
+    "sass-loader": "^7.1.0",
+    "three": "^0.108.0"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
@@ -44,9 +48,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/TibiTotoro/galaxy"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/TibiTotoro/galaxy/issues"
   }
 }

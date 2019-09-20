@@ -1,0 +1,147 @@
+{
+    "planets":[
+        {  
+            "name": "mercury",
+            "r":10,
+            "majorSemiaxis": 700,
+            "eccentricity": 0.205,
+            "velocityOrbital":1,
+            "incline":0.12,
+            "axialTilt":1,
+            "rotationAxis":  0.01,
+            "texture":"/images/textures/planets/mercury.jpg"
+        },
+        {  
+            "name": "venus",	
+            "r":23,
+            "majorSemiaxis": 800,
+            "eccentricity": 0.006,
+            "velocityOrbital":0.35,
+            "incline":0.06,
+            "axialTilt":1,
+            "rotationAxis":  -0.006,
+            "texture":"/images/textures/planets/venus.jpg"
+        },
+        {  
+            "name": "earth",
+            "r":25,
+            "majorSemiaxis": 920,
+            "eccentricity": 0.017,
+            "velocityOrbital":0.29,
+            "incline":0,
+            "axialTilt":0.4,
+            "rotationAxis":  1.60,
+            "texture":"/images/textures/planets/earth.jpg"
+        },
+        {  
+            "name": "mars",
+            "r":15,
+            "majorSemiaxis": 1100,
+            "eccentricity": 0.093,
+            "velocityOrbital":0.24,
+            "incline":0.03,
+            "axialTilt":0.4,
+            "rotationAxis":  0.8,
+            "texture":"/images/textures/planets/mars.jpg"
+        },
+        {  
+            "name": "jupiter",
+            "r":70,
+            "majorSemiaxis": 1900,
+            "eccentricity":  0.049,
+            "velocityOrbital":0.13,
+            "incline":0.02,
+            "axialTilt":0.4,
+            "rotationAxis":  10,
+            "texture":"/images/textures/planets/jupiter.jpg"
+        },
+        {  
+            "name": "saturn",
+            "r":65,
+            "majorSemiaxis": 2700,
+            "eccentricity": 0.055,
+            "velocityOrbital":0.09,
+            "incline":0.04,
+            "axialTilt":0.4,
+            "rotationAxis": 9,
+            "texture":"/images/textures/planets/saturn.jpg"
+        },
+        {  
+            "name": "uranus",
+            "r":50,
+            "majorSemiaxis": 4100,
+            "eccentricity": 0.044,
+            "velocityOrbital":0.01,
+            "incline":0.01,
+            "axialTilt":0.4,
+            "rotationAxis": 2.5,
+            "texture":"/images/textures/planets/uranus.jpg"
+        },
+        {  
+            "name": "neptune",
+            "r":48,
+            "majorSemiaxis": 6000,
+            "eccentricity":0.11,
+            "velocityOrbital": 0.054,
+            "incline":0.034,
+            "axialTilt":0.4,
+            "rotationAxis":  3,
+            "texture":"/images/textures/planets/neptune.jpg"
+        },
+        {  
+            "name": "pluto",
+            "r":15,
+            "majorSemiaxis": 5704,
+            "eccentricity":0.248,
+            "velocityOrbital": 0.05,
+            "incline":0.029,
+            "axialTilt":0.4,
+            "rotationAxis":  2,
+            "texture":"/images/textures/planets/pluto.jpg"
+        },
+        {  
+            "name": "ceres",
+            "r":7,
+            "majorSemiaxis":  1404,
+            "eccentricity":0.008,
+            "velocityOrbital": 0.17,
+            "incline":0.17,
+            "axialTilt":0.4,
+            "rotationAxis":  2,
+            "texture":"/images/textures/planets/pluto.jpg"
+        },
+        {  
+            "name": "eris",
+            "r":15,
+            "majorSemiaxis": 7000,
+            "eccentricity":0.008,
+            "velocityOrbital": 0.44,
+            "incline":0.76,
+            "axialTilt":0.4,
+            "rotationAxis":  2,
+            "texture":"/images/textures/planets/pluto.jpg"
+        },
+        {  
+            "name": "makemake",
+            "r":15,
+            "majorSemiaxis": 6300,
+            "eccentricity":0.16,
+            "velocityOrbital": 0.5,
+            "incline":0.5,
+            "axialTilt":0.4,
+            "rotationAxis":  2,
+            "texture":"/images/textures/planets/pluto.jpg"
+        },
+        {  
+            "name": "haumea",
+            "r":15,
+            "majorSemiaxis": 6100,
+            "eccentricity":0.20,
+            "velocityOrbital":0.44,
+            "incline":0.49,
+            "axialTilt":0.4,
+            "rotationAxis":  2,
+            "texture":"/images/textures/planets/pluto.jpg"
+        }
+    ]
+}

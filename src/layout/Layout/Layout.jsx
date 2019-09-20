@@ -14,7 +14,9 @@ const Layout = ({ children }) => {
   return (
     <>
         <Header siteTitle='Супер сайт' />
+          <div className="wrapper">
             <main>{children}</main>
+            </div>
         <Footer />
 
     </>

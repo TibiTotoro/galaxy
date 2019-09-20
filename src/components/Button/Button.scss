@@ -1,5 +1,6 @@
 .Button {
-    position: relative;  
+    position: relative; 
+    cursor: pointer; 
     display: inline-block;
     padding: 10px 20px;
     overflow: hidden;      
@@ -14,37 +15,12 @@
     color: white;   
     transition:all 0.5s cubic-bezier(.97, .16, 1, .01);      
 
-    &:hover, &:focus {
+    &:hover, &:focus,
+    &:active {
       background-size:170% 170%;
      }
 
-    &:after {
-      content: "";
-      
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      
-      display: block;
-      width: 0;
-      padding-top: 0;
-        
-      border-radius: 100%;
-      
-      background-color: rgba($color_add,.3);
-
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      -o-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-    }
-
-    &:active:after {
-      width: 120%;
-      padding-top: 120%;      
-      transition: width .2s ease-out, padding-top .2s ease-out;
-    } 
+   
 }
   
     
